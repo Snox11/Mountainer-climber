@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'dev.snox11.mountainer'
+version = '0.1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    jmeVersion = '3.8.1-stable'
+}
+
+dependencies {
+    implementation "org.jmonkeyengine:jme3-core:${jmeVersion}"
+    implementation "org.jmonkeyengine:jme3-desktop:${jmeVersion}"
+    implementation "org.jmonkeyengine:jme3-lwjgl3:${jmeVersion}"
+    implementation "org.jmonkeyengine:jme3-bullet:${jmeVersion}"
+    runtimeOnly "org.jmonkeyengine:jme3-bullet-native:${jmeVersion}"
+}
+
+application {
+    mainClass = 'dev.snox11.mountainer.MountainerGame'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
